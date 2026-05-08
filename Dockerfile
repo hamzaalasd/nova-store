@@ -4,12 +4,7 @@ WORKDIR /var/www/html
 
 COPY . .
 
-RUN apk add --no-cache nodejs npm
-
 RUN composer install --no-dev --optimize-autoloader
-
-RUN npm ci || npm install
-RUN npm run build
 
 RUN php artisan storage:link || true
 RUN php artisan config:clear
