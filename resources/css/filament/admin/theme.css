@@ -1,0 +1,71 @@
+@import '../../../../vendor/filament/filament/resources/css/theme.css';
+
+@source '../../../../app/Filament/**/*.php';
+@source '../../../../resources/views/filament/**/*.blade.php';
+
+:root {
+    --font-family: 'Noto Sans Arabic', 'Instrument Sans', ui-sans-serif, system-ui, sans-serif;
+}
+
+.fi-body {
+    background: linear-gradient(180deg, #FAF9F7 0%, #F0EDE8 100%);
+}
+
+.fi-sidebar {
+    background: linear-gradient(180deg, #2D2438 0%, #342840 52%, #2D2438 100%);
+    border-inline-end: 1px solid rgba(212, 175, 122, 0.16);
+}
+
+.fi-sidebar .fi-sidebar-header {
+    background: transparent;
+    border-bottom: 1px solid rgba(212, 175, 122, 0.14);
+}
+
+.fi-sidebar .fi-logo,
+.fi-sidebar .fi-sidebar-header a {
+    color: #D4AF7A;
+    letter-spacing: 0.08em;
+}
+
+.fi-sidebar .fi-sidebar-item-label,
+.fi-sidebar .fi-sidebar-group-label,
+.fi-sidebar .fi-sidebar-item-icon {
+    color: rgba(250, 249, 247, 0.76);
+}
+
+.fi-sidebar .fi-active .fi-sidebar-item-label,
+.fi-sidebar .fi-active .fi-sidebar-item-icon {
+    color: #FAF9F7;
+}
+
+.fi-sidebar .fi-active {
+    background: linear-gradient(135deg, rgba(74, 56, 96, 0.88), rgba(184, 150, 90, 0.24));
+    border: 1px solid rgba(212, 175, 122, 0.22);
+}
+
+.fi-topbar {
+    background: rgba(250, 249, 247, 0.9);
+    border-bottom: 1px solid rgba(45, 36, 56, 0.08);
+    backdrop-filter: blur(18px);
+}
+
+.fi-section,
+.fi-ta,
+.fi-wi-widget {
+    border-color: rgba(45, 36, 56, 0.1);
+    background: rgba(250, 249, 247, 0.92);
+    box-shadow: 0 18px 50px rgba(45, 36, 56, 0.08);
+}
+
+.fi-btn {
+    border-radius: 0.7rem;
+}
+
+.fi-btn-color-primary {
+    box-shadow: 0 12px 28px rgba(45, 36, 56, 0.18);
+}
+
+.fi-badge {
+    border-radius: 999px;
+    font-weight: 800;
+}

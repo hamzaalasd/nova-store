@@ -1,0 +1,24 @@
+<?php
+
+namespace Database\Seeders;
+
+use App\Models\Setting;
+use Illuminate\Database\Seeder;
+
+class SettingSeeder extends Seeder
+{
+    public function run(): void
+    {
+        $settings = [
+            'site_name' => 'NOVA Store',
+            'support_email' => 'support@nova.test',
+            'default_currency' => 'SAR',
+            'store_country' => 'SA',
+            'tax_enabled' => 'false',
+        ];
+
+        foreach ($settings as $key => $value) {
+            Setting::updateOrCreate(['key' => $key], ['value' => $value]);
+        }
+    }
+}

@@ -1,0 +1,216 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@theme {
+    --font-sans: 'Noto Sans Arabic', 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+
+    --color-nova-cream: #FAF9F7;
+    --color-nova-warm: #F0EDE8;
+    --color-nova-plum: #2D2438;
+    --color-nova-violet: #4A3860;
+    --color-nova-gold: #B8965A;
+    --color-nova-gold-soft: #D4AF7A;
+
+    --color-nova-ink: #2D2438;
+    --color-nova-graphite: #4A3860;
+    --color-nova-surface: #FAF9F7;
+    --color-nova-paper: #FAF9F7;
+    --color-nova-line: #F0EDE8;
+    --color-nova-muted: #756D7E;
+    --color-nova-emerald: #4A3860;
+    --color-nova-emerald-dark: #2D2438;
+    --color-nova-copper: #B8965A;
+    --color-nova-copper-soft: #D4AF7A;
+    --color-nova-danger: #8E3428;
+}
+
+@layer base {
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        background:
+            linear-gradient(180deg, #FAF9F7 0%, #F0EDE8 100%);
+    }
+
+    ::selection {
+        background: #4A3860;
+        color: #FAF9F7;
+    }
+}
+
+@layer components {
+    .nova-shell {
+        border: 1px solid rgba(224, 216, 206, 0.9);
+        background: #FAF9F7;
+        box-shadow: 0 24px 70px rgba(45, 36, 56, 0.08);
+    }
+
+    .nova-nav {
+        background: #2D2438;
+        color: #FAF9F7;
+    }
+
+    .nova-nav-link {
+        color: rgba(250, 249, 247, 0.66);
+        font-size: 0.82rem;
+        font-weight: 700;
+        transition: color 160ms ease;
+    }
+
+    .nova-nav-link:hover,
+    .nova-nav-link-active {
+        color: #D4AF7A;
+    }
+
+    .nova-icon-button {
+        display: inline-grid;
+        min-width: 2.25rem;
+        height: 2.25rem;
+        place-items: center;
+        border-radius: 0.5rem;
+        border: 1px solid rgba(212, 175, 122, 0.25);
+        color: #D4AF7A;
+        transition: background 160ms ease, border-color 160ms ease;
+    }
+
+    .nova-icon-button:hover {
+        border-color: rgba(212, 175, 122, 0.52);
+        background: rgba(255, 255, 255, 0.06);
+    }
+
+    .nova-hero {
+        background:
+            linear-gradient(135deg, rgba(74, 56, 96, 0.9), rgba(45, 36, 56, 1) 48%),
+            #2D2438;
+        color: #FAF9F7;
+    }
+
+    .nova-eyebrow {
+        color: #B8965A;
+        font-size: 0.68rem;
+        font-weight: 800;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+    }
+
+    .nova-gold-text {
+        color: #D4AF7A;
+    }
+
+    .nova-category-pill {
+        border: 1px solid #E0D8CE;
+        background: #FAF9F7;
+        color: #756D7E;
+        transition: background 160ms ease, color 160ms ease, border-color 160ms ease;
+    }
+
+    .nova-category-pill:hover,
+    .nova-category-pill-active {
+        border-color: #2D2438;
+        background: #2D2438;
+        color: #D4AF7A;
+    }
+
+    .nova-panel {
+        border: 1px solid rgba(45, 36, 56, 0.1);
+        background: rgba(250, 249, 247, 0.9);
+        box-shadow: 0 20px 60px rgba(45, 36, 56, 0.1);
+        backdrop-filter: blur(18px);
+    }
+
+    .nova-btn-primary {
+        background: #B8965A;
+        color: #2D2438;
+        box-shadow: 0 14px 34px rgba(184, 150, 90, 0.24);
+        transition: transform 180ms ease, box-shadow 180ms ease, filter 180ms ease;
+    }
+
+    .nova-btn-primary:hover {
+        transform: translateY(-1px);
+        filter: saturate(1.05);
+        box-shadow: 0 18px 42px rgba(184, 150, 90, 0.32);
+    }
+
+    .nova-btn-dark {
+        background: linear-gradient(135deg, #2D2438, #4A3860);
+        color: #FAF9F7;
+        box-shadow: 0 14px 34px rgba(45, 36, 56, 0.22);
+        transition: transform 180ms ease, box-shadow 180ms ease;
+    }
+
+    .nova-btn-dark:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 18px 42px rgba(45, 36, 56, 0.3);
+    }
+
+    .nova-link {
+        color: #4A3860;
+        font-weight: 800;
+    }
+
+    .nova-link:hover {
+        color: #B8965A;
+    }
+
+    .nova-input {
+        border: 1px solid rgba(45, 36, 56, 0.14);
+        background: rgba(250, 249, 247, 0.96);
+        color: #2D2438;
+        outline: none;
+        transition: border-color 180ms ease, box-shadow 180ms ease, background 180ms ease;
+    }
+
+    .nova-input:focus {
+        border-color: #B8965A;
+        box-shadow: 0 0 0 4px rgba(184, 150, 90, 0.18);
+        background: white;
+    }
+
+    .nova-card-hover {
+        transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+    }
+
+    .nova-card-hover:hover {
+        transform: translateY(-4px);
+        border-color: rgba(184, 150, 90, 0.38);
+        box-shadow: 0 22px 60px rgba(45, 36, 56, 0.14);
+    }
+
+    .nova-product-card {
+        border: 1px solid #E0D8CE;
+        background: #fff;
+        box-shadow: 0 10px 28px rgba(45, 36, 56, 0.06);
+    }
+
+    .nova-product-media {
+        background: #F0EDE8;
+    }
+
+    .nova-badge-gold {
+        background: #B8965A;
+        color: #2D2438;
+    }
+
+    .nova-badge-dark {
+        background: #2D2438;
+        color: #D4AF7A;
+    }
+
+    .nova-trust-bar {
+        background: #2D2438;
+        color: #FAF9F7;
+    }
+
+    .nova-total-row {
+        border-top: 1px solid #E0D8CE;
+        color: #2D2438;
+        font-weight: 900;
+    }
+}
